@@ -61,8 +61,8 @@ show_bank_statement --client "John Doe" --since "2021-01-01 00:00:00" --till "20
 <summary> Comments </summary>
 <ul>
  <li><code>--since</code> and <code>--till</code> parameters are <u>optional</u>;</li>
- <li>the datetime must be in the format "YYYY-MM-DD HH:MM:SS".</li>
- <li>if the <code>--since</code> and <code>--till</code> parameters are not specified,
+ <li>the datetime must be in the format "YYYY-MM-DD HH:MM:SS";</li>
+ <li>if the <code>--since</code> and <code>--till</code> parameters are not specified
 the bank statement will be shown for the whole period.</li>
 </ul>
 </details>

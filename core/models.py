@@ -48,14 +48,6 @@ class User:
     def name(self) -> str:
         return self._name
 
-    @name.setter
-    def name(self, value: str):
-        self._name = value
-
     @property
     def currency(self) -> Currency:
         return self._currency
-
-    @currency.setter
-    def currency(self, value: Currency):
-        self._currency = value
