@@ -21,7 +21,6 @@ pip install -r requirements.txt
 ```bash
 python3 main.py
 ```
-<hr>
 
 ## Usage
 - **The client is automatically created at the first successful deposit to the account. To make a
@@ -38,7 +37,6 @@ deposit --client "John Doe" --amount 100 --description "Salary"
  <li>the description must be string not longer than 255 characters.</li>
 </ul>
 </details>
-<hr>
 
 - **To make a withdrawal, enter a command**:
 ```bash
@@ -54,7 +52,6 @@ withdraw --client "John Doe" --amount 50 --description "Rent"
  <li>the description must be string not longer than 255 characters.</li>
 </ul>
 </details>
-<hr>
 
 - **To list all client's transactions, enter a command**:
 ```bash
@@ -69,7 +66,6 @@ show_bank_statement --client "John Doe" --since "2021-01-01 00:00:00" --till "20
 the bank statement will be shown for the whole period.</li>
 </ul>
 </details>
-<hr>
 
 #### Expected ouput:
 
@@ -80,7 +76,6 @@ the bank statement will be shown for the whole period.</li>
 |   18.12.2022 15:45:12    | Stolen      |             | 90       | 215     |
 |   18.12.2022 15:47:30    | Rent        | 50          |          | 165     |
 
-<hr>
 
 - **To <u>exit</u> the application, enter a command**:
 ```bash
