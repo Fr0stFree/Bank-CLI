@@ -71,5 +71,4 @@ class Operations(Singleton):
 							  currency=currency, description=description, type_=type_,
 							  created=dt.datetime.now())
 		self._operations[user_name].append(operation)
-		print(f'after --- {self._operations}')
 		return operation

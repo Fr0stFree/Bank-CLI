@@ -1,9 +1,8 @@
-import sys
-from functools import reduce
 from typing import Any
 
 from tabulate import tabulate
 
+from .exceptions import ProgramExit
 from .models import OperationType
 from . import utils
 from . import validators
@@ -14,13 +13,17 @@ class Commands:
 
 	@staticmethod
 	def exit() -> None:
-		"""Выход из программы."""
-		print('System exit.')
-		sys.exit(0)
+		"""
+		Type this to exit the program.
+		"""
+		print(utils.BYE_MESSAGE)
+		raise ProgramExit
 
 	@staticmethod
 	def deposit(client: Any, amount: Any, description: Any) -> None:
-		"""Команда для вызова операции пополнения счёта клиента."""
+		"""
+		This command is used to deposit money to the client's account.
+		"""
 		try:
 			validators.validate_change_balance_input(client, amount, description)
 		except ValueError as e:
@@ -64,9 +67,3 @@ class Commands:
 			op.balance,
 		] for op in operations]
 		print(tabulate(data, headers=headers, tablefmt='psql'))
-
-
-def test():
-	c1 = 'deposit --client "John Doe" --amount 100 --description "Salary"'
-	c2 = 'withdraw --client "John Doe" --amount 100 --description "Salary"'
-	c3 = 'show_bank_statement --client "John Doe" --since "2019-01-01 00:00:00" --till "2019-01-31 00:00:00"'

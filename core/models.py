@@ -1,11 +1,7 @@
-import logging
 import datetime as dt
 from decimal import Decimal
 from enum import Enum
 from typing import NamedTuple
-
-
-logger = logging.getLogger(__name__)
 
 
 class OperationType(Enum):

@@ -4,9 +4,6 @@ MAX_CLIENT_NAME_LENGTH = 100
 MAX_OPERATION_DESCRIPTION_LENGTH = 255
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
-BASE_ERROR_MESSAGE = 'Something went wrong. Please, contact the developer.'
-COMMAND_NOT_FOUND_MESSAGE = 'Command not found. Type "help" to see the list of available commands.'
-
 LOGFILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs', 'main.log')
 
 LOGGING = {

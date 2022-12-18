@@ -1,29 +1,26 @@
-import logging
 import logging.config
-import sys
+from time import sleep
 
 import fire
 
-from core import settings
 from core.commands import Commands
-from core.utils import HELLO_MESSAGE, BYE_MESSAGE
+from core.exceptions import ProgramExit
+from core import settings
+from core import utils
+
 
 logging.config.dictConfig(settings.LOGGING)
 logger = logging.getLogger(__name__)
 
 
-def get_query() -> str:
-	"""Получение запроса от пользователя."""
-	try:
-		return input('>>> ')
-	except KeyboardInterrupt:
-		print(BYE_MESSAGE)
-		sys.exit(0)
-
-
 if __name__ == '__main__':
-	print(HELLO_MESSAGE)
-	commands = Commands()
 	while True:
-		query = get_query()
-		fire.Fire(commands, query)
+		query = utils.get_query()
+		try:
+			fire.Fire(Commands, query)
+		except ProgramExit:
+			break
+		except BaseException as e:
+			sleep(.2)
+			logger.error(e)
+			print('Unsuccessful operation.')
